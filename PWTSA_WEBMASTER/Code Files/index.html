@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PWHS TSA</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="generalstyles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="icon" href="https://schoolassets.s3.amazonaws.com/logos/2104/2104.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>-->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.js"></script> -->
+    <script src="http://threejs.org/build/three.min.js"></script>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="20">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+
+            var ctrl = new ScrollMagic.Controller();
+
+            gsap.from(".info", { duration: 0.5, opacity: 0, ease: "back", scale: 1, y: -20 });
+
+
+
+            // $("section").each(function () {
+            //     var in =
+            // }
+
+            // Create scenes in jQuery each() loop
+            $("section").each(function () {
+                var tl = new TimelineMax();
+                var container = $(this).find(".container");
+
+                // tl.from(outer, 0.25, { scaleY: 0 });
+                // tl.from(inner, 0.65, { yPerce    nt: 100, ease: Back.easeOut });
+
+                tl.from(container, { duration: 0.6, opacity: 0, ease: "expo.out", y: 80, });
+
+
+
+
+                new ScrollMagic.Scene({
+                    triggerElement: this,
+                    triggerHook: 0.60
+                })
+                    .setTween(tl)
+
+                    .addTo(ctrl);
+            });
+        });
+
+    </script>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light position-fixed" id='Scrollspy'
+        style='background-color:rgb(255, 255, 255);'>
+        <a class="navbar-brand" href="#">
+            <img src="../Images/Logos/Mainlogo.png" class="d-inline-block align-top" alt="" class='logo' id='logo'>
+        </a>
+        <button id='toggle-control ' class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+            aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav ml-auto nav">
+                <li class="nav-item nav-choice" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="nav-link" href="#section1">About TSA</a>
+                </li>
+                <li class="nav-item nav-choice" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="nav-link" href="#section2">About Our Chapter</a>
+                </li>
+                <li class="nav-item nav-choice" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="nav-link" href="#section4">Competitions</a>
+                </li>
+                <li class="nav-item nav-choice" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="nav-link" href="#section5">Our Officers</a>
+                </li>
+
+                <li class="nav-item nav-choice" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="nav-link" href="#section3">Tech Department</a>
+                </li>
+                <li class="nav-item nav-choice" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="nav-link" href="../brief/index.html">Design Brief</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class='introductory section' id='container'>
+        <div id='canvasa'>
+            <header class='info'>
+                <hgroup class='about'>
+                    <h1>PWHS TSA Chapter</h1>
+                </hgroup>
+            </header>
+        </div>
+    </section>
+    <section class='darksection section' tabindex="-1">
+        <div class='scrollerspacer_1' id='section1'></div>
+        <div class='container'>
+
+            <div class='row'>
+                <div class='col-xl-10 col-lg-12 mx-auto middle-brace'>
+                    <h3 class='section-heading subheaderblue' style='text-align:center'>About TSA</h3>
+                    <h3 class='section-heading subheaderblue'>What is TSA</h3>
+                    <p>
+                        The Technology Student Association (TSA) is a national organization of students engaged in
+                        science, technology, engineering and mathematics (STEM). Open to students enrolled in or who
+                        have completed technology education courses, TSA's membership includes over 233,000 middle
+                        and
+                        high school students in approximately 2,000 schools spanning 49 states. Members learn
+                        through
+                        exciting competitive events, leadership opportunities and much more. </p>
+                    <p>
+
+                        Education directives at the federal and state levels focus on providing avenues for
+                        initiatives
+                        such as STEM (Science, Technology, Engineering and Mathematics) education. TSA helps
+                        teachers
+                        meet the criteria for STEM education goals through exciting programs that include technology
+                        activities, competitions, leadership, and teamwork for students. In addition, all TSA
+                        activities
+                        are correlated to the Standards for Technological Literacy, as set forth by the
+                        International
+                        Technology and Engineering Educators Association (ITEEA).
+                    </p>
+                    <h3 class='section-heading subheaderblue'>TSA Events</h3>
+                    <p>TSA has more than 30 competitive events that range in topics covering science, technology,
+                        engineering, art, and math. If competitors do well, they have the opportunity to compete at
+                        exciting state conferences and then at the annual National Conference.</p>
+                </div>
+            </div>
+        </div>
+        <div class='scrollerspacer' id='section2' id='section2'></div>
+    </section>
+    <section class='whitesection section'>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-xl-10 col-lg-12 mx-auto middle-brace'>
+
+                    <h3 class='section-heading subheaderwhite' style='text-align:center'>About Our Chapter</h3>
+                    <h3 class='section-heading subheaderwhite'>Who We Are</h3>
+                    <p>We are Plymouth Whitemarsh High School's TSA club, competing in our 40th TSA season. The
+                        Plymouth
+                        Whitemarsh TSA chapter fosters personal growth, leadership, and opportunities in Science,
+                        Technology, Engineering, and Mathematics (STEM); our chapter members apply and integrate
+                        these
+                        concepts through co-curricular activities, competitions, and related programs.</p>
+                    <h3 class='section-heading subheaderwhite'>Creed</h3>
+                    <p>"Learning to live in a technical world"</p>
+                    </br>
+                    <p>I believe in using technology to make the world a better place. I believe in collaborating
+                        with
+                        others to create beneficial solutions for the future. I believe that I should be dedicated
+                        to
+                        creating new technologies and educating others about technology. I will strive to better the
+                        world around us and to spread the influence of technology.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class='darksection section'>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-xl-10 col-lg-12 mx-auto middle-brace'>
+
+                    <h3 class='section-heading subheaderblue' style='text-align:center'>Our Activities</h3>
+
+                    <ul class="nav nav-tabs nav-justified" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#Meetings"
+                                onclick='meetings()'>Meetings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#Recruitment"
+                                onclick='recruitment()'>Recruitment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#Fundraising"
+                                onclick='fundraising()'>Fundraising</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#Community" onclick='community()'>Community</a>
+                        </li>
+                    </ul>
+                    <div class='tab-content'>
+                        <div class='tab-pane fade show active' id='Meetings'>
+                            <div class='d-flex flex-column flex-lg-row'>
+                                <div>
+                                    <h2>Attendance & Checkpoints</h2>
+                                    <p>Before the start of every club meeting, each student must sign in to
+                                        attendance
+                                        via Google Form. Once a month, the officers send a checkpoint form through
+                                        email
+                                        to check up on the progress of each group. During the weekly after school
+                                        meeting following this checkpoint, the officers meet with each group in
+                                        person
+                                        to check in on their progress, answer questions, and help them plan for the
+                                        next
+                                        week. The officers will advise each group as they move closer to the
+                                        competition
+                                        dates.</p>
+                                    <h2>Weekly Meetings</h2>
+                                    <p>To keep all students intact with their TSA event, the club runs weekly
+                                        meetings
+                                        to regroup the teams and update each other on any group progress. The club
+                                        officers begin the meetings with recaps on competition dates, event updates,
+                                        and
+                                        general announcements. Throughout the meetings, students in each event
+                                        regroup
+                                        to share their personal progress on the project and to collaborate on plans
+                                        for
+                                        the upcoming competitions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='tab-content'>
+                        <div class='tab-pane fade show' id='Recruitment'>
+                            <div class='d-flex flex-column flex-lg-row'>
+                                <div>
+                                    <h2>Club Fair</h2>
+                                    <p>Club Fair is a school program where each club has a chance to directly
+                                        recruit
+                                        members by recording their contact information. The TSA club of Plymouth
+                                        Whitemarsh Highschool was able to gain 24 loyal members through the event,
+                                        and
+                                        we hope to expand on that number by next year's fair.</p>
+                                    <h2>Lab Safety Training</h2>
+                                    <p>The Lab Safety Training program within our TSA chapter was put into place in
+                                        order to ensure that everyone that enters the lab is able to ensure their
+                                        own
+                                        safety and the safety of those around them. Chapter members are given a quiz
+                                        about the different pieces of equitment in the lab, and upon passing they
+                                        are
+                                        granted access to the lab's machinery. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='tab-content'>
+                        <div class='tab-pane fade show' id='Fundraising'>
+                            <div class='d-flex flex-column flex-lg-row'>
+                                <div>
+                                    <h2>Pappy's Orchard and Bakery</h2>
+                                    <p>In order to offset the costs of the State and National competitions, our
+                                        chapter
+                                        participated in the Pappy's Orchard and Bakery Fundraiser. Our chapter went
+                                        door
+                                        to door selling pies from the Orchard. This was very successful as we were
+                                        able
+                                        to cover a lot of the costs for the state competition.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='tab-content'>
+                        <div class='tab-pane fade show' id='Community'>
+                            <div class='d-flex flex-column flex-lg-row'>
+                                <div>
+                                    <h2>PWHS TSA and the American Cancer Society</h2>
+                                    <p>During the school year, the PWHS TSA chapter raised money to help fund the
+                                        vital
+                                        research, education, advocacy, and patient services of the American Cancer
+                                        Society. Our chapter was able to raise over 1000 dollars to support cancer
+                                        reaserch.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        function meetings() {
+                            var element = document.querySelector('#Meetings');
+                            document.getElementById("Meetings").style.display = "block";
+
+                            var element = document.querySelector('#Recruitment');
+                            document.getElementById("Recruitment").style.display = "none";
+
+                            var element = document.querySelector('#Fundraising');
+                            document.getElementById("Fundraising").style.display = "none";
+
+                            var element = document.querySelector('#Community');
+                            document.getElementById("Community").style.display = "none";
+                        }
+
+                        function recruitment() {
+                            var element = document.querySelector('#Meetings');
+                            document.getElementById("Meetings").style.display = "none";
+
+                            var element = document.querySelector('#Recruitment');
+                            document.getElementById("Recruitment").style.display = "block";
+
+                            var element = document.querySelector('#Fundraising');
+                            document.getElementById("Fundraising").style.display = "none";
+
+                            var element = document.querySelector('#Community');
+                            document.getElementById("Community").style.display = "none";
+                        }
+
+                        function fundraising() {
+                            var element = document.querySelector('#Meetings');
+                            document.getElementById("Meetings").style.display = "none";
+
+                            var element = document.querySelector('#Recruitment');
+                            document.getElementById("Recruitment").style.display = "none";
+
+                            var element = document.querySelector('#Fundraising');
+                            document.getElementById("Fundraising").style.display = "block";
+
+                            var element = document.querySelector('#Community');
+                            document.getElementById("Community").style.display = "none";
+                        }
+
+                        function community() {
+                            var element = document.querySelector('#Meetings');
+                            document.getElementById("Meetings").style.display = "none";
+
+                            var element = document.querySelector('#Recruitment');
+                            document.getElementById("Recruitment").style.display = "none";
+
+                            var element = document.querySelector('#Fundraising');
+                            document.getElementById("Fundraising").style.display = "none";
+
+                            var element = document.querySelector('#Community');
+                            document.getElementById("Community").style.display = "block";
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class='scrollerspacer' id='section4'></div>
+    </section>
+    <section class='section whitesection'>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-xl-10 col-lg-12 mx-auto middle-brace' style='padding-bottom:100px'>
+                    <h3 class='section-heading subheaderwhite' style='text-align:center'>Our Competitions</h3>
+
+                    <div class="card border-danger mb-3 comp-dropdown">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <div class='competition-dropdown-tag'>Region 5 Conference</div>
+                                <button class="btn btn-danger comp-btn" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"
+                                    style='float:right;display:inline-block;'>
+                                    More Info
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne">
+                            <div class="card-body">
+                                <p>The Pennsylvania Region 5 conference will be held on Feburary 9th at Strayer
+                                    Middle
+                                    School. Students from across region 5 will compete in various events. The
+                                    winners
+                                    will
+                                    proceed onto states at Seven Springs Resort.</p>
+
+                                <!-- <img src='../Images/Teachers/grouppic.jpg' class='img-fluid rounded group-pic'>
+
+                                <h3 class='section-heading subheaderblue' style='text-align:center'>Our Regional Chapter
+                                    Awards</h3>
+                                <table class='cl-lg-6 col-centered'>
+                                    <thead>
+                                        <th>Event</th>
+                                        <th>Place</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Biotechnology</td>
+                                            <td>1st &#x1F947;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website Design</td>
+                                            <td>1st &#x1F947;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Junior Solar Sprint</td>
+                                            <td>1st &#x1F947;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mass Productions</td>
+                                            <td>1st &#x1F947;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PA - Delta Dart</td>
+                                            <td>1st &#x1F947;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chapter Team - Written</td>
+                                            <td>1st &#x1F947;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CAD Foundations</td>
+                                            <td>2nd &#x1F948;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Leadership Strategies</td>
+                                            <td>2nd &#x1F948;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Medical Technology</td>
+                                            <td>2nd &#x1F948;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Off the Grid</td>
+                                            <td>2nd &#x1F948;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Video Game Design</td>
+                                            <td>2nd &#x1F948;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PA - Robotics</td>
+                                            <td>2nd &#x1F948;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Challenging Technology Issues</td>
+                                            <td>3rd &#x1F949;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Inventions and Innovations</td>
+                                            <td>3rd &#x1F949;</td>
+                                        </tr>
+                                    </tbody>
+                                </table> -->
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card border-danger mb-3 comp-dropdown">
+                        <div class="card-header" id="headingTwo">
+                            <h2 class="mb-0">
+                                <div class='competition-dropdown-tag'>PA State Conference</div>
+                                <button class="btn btn-danger comp-btn" data-toggle="collapse"
+                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"
+                                    style='float:right;display:inline-block;'>
+                                    More Info
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo">
+                            <div class="card-body">
+                                <p>The PA state conference will be held between April 10-13. It will be held at
+                                    Seven
+                                    Springs Resort. This year, students from all over Pennsylvania will compete in
+                                    over
+                                    30 different events and some of the winners are proceeding to the national TSA
+                                    conference in Nashville, TN.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card border-danger mb-3 comp-dropdown">
+                        <div class="card-header" id="headingThree">
+                            <h2 class="mb-0">
+                                <div class='competition-dropdown-tag'>National Conference</div>
+                                <button class="btn btn-danger comp-btn" data-toggle="collapse"
+                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"
+                                    style='float:right;display:inline-block;'>
+                                    More Info
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree">
+                            <div class="card-body">
+                                <p>The national TSA conference will be held between June 27th - July 1st. This year,
+                                    it
+                                    is being held in
+                                    Nashville, TN. Students from all over the country will be competing in this 5
+                                    day
+                                    long conference, participating in events ranging from coding to prepared speech.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='scrollerspacer' id='section5'></div>
+    </section>
+    <section class='section darksection'>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-xl-10 col-lg-12 mx-auto middle-brace'>
+                    <h3 class='section-heading subheaderblue' style='text-align:center'>Our Officers
+                    </h3>
+
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
+                        <div class="carousel-inner">
+                            <div class='carousel-item active'>
+                                <h3 class='section-heading subheaderwhite' style='text-align:center'>President</h3>
+                                <img src="../Images/Officers/CaseyS.png" class="rounded mx-auto d-block" alt="..."
+                                    height='300px'>
+                                <h3 class='section-heading subheaderwhite' style='text-align:center'>Casey Sharpe
+                                </h3>
+                                <p class='officerdescription'>Casey Sharpe is a long time TSA member and a first
+                                    time
+                                    president for our chapter. The duties of Casey range from establishing and
+                                    running
+                                    meetings, organizing agendas, overseeing projects, and most importantly, she
+                                    motivates our chapter to succeed.</p>
+                            </div>
+                            <div class="carousel-item">
+                                <h3 class='section-heading subheaderwhite' style='text-align:center'>Vice President
+                                </h3>
+                                <img src="../Images/Officers/dhruv.PNG" class="rounded mx-auto d-block" alt="..."
+                                    height='300px'>
+                                <h3 class='section-heading subheaderwhite' style='text-align:center'>Dhurv Argual
+                                </h3>
+                                <p class='officerdescription'>Dhruv Argual is a long time TSA member and a previous
+                                    State Officer. Dhruv assists in duties of the president, helping run meetings
+                                    and
+                                    organize events. Also, Dhruv is an important member for his knowledge on many
+                                    different events.</p>
+                            </div>
+                            <div class="carousel-item">
+                                <h3 class='section-heading subheaderwhite' style='text-align:center'>
+                                    Sergeant-at-Arms
+                                </h3>
+                                <img src="../Images/Officers/liza.jpg" class="rounded mx-auto d-block" alt="..."
+                                    height='300px'>
+                                <h3 class='section-heading subheaderwhite' style='text-align:center'>Liza Smaliak
+                                </h3>
+                                <p class='officerdescription'>Liza holds the responsibility of the Sergant-at-Arms
+                                    position. She carries out assignments from the president well, and she keeps
+                                    meetings in order.</p>
+                            </div>
+                            <div class="carousel-item">
+                                <h3 class='section-heading subheaderwhite' style='text-align:center'>Reporter</h3>
+                                <img src="../Images/Officers/Dean.PNG" class="rounded mx-auto d-block" alt="..."
+                                    height='300px'>
+                                <h3 class='section-heading subheaderwhite' style='text-align:center'>Dean Suchsland
+                                </h3>
+                                <p class='officerdescription'>Dean Suchsland is a very compeptent reporter for our
+                                    chapter, not to mention his academics are the best in the chapter. Dean also
+                                    handles
+                                    the chapter's social media account on Instagram, updating its followers with the
+                                    recent events of our chapter.</p>
+                            </div>
+                            <div class="carousel-item">
+                                <h3 class='section-heading subheaderwhite' style='text-align:center'>Treasuerer</h3>
+                                <img src="../Images/Officers/adam.PNG" class="rounded mx-auto d-block" alt="..."
+                                    height='300px'>
+                                <h3 class='section-heading subheaderwhite' style='text-align:center'>Adam Freidman
+                                </h3>
+                                <p class='officerdescription'>Adam Freidman is our Treasuerer for our chapter, and
+                                    he
+                                    handley oversees our chapter's spending for equipment and fundraising.</p>
+                            </div>
+                            <div class='carousel-item'>
+                                <h3 class='section-heading subheaderwhite' style='text-align:center'>Historian</h3>
+                                <img src="../Images/Officers/Alex.PNG" class="rounded mx-auto d-block" alt="..."
+                                    height='300px'>
+                                <h3 class='section-heading subheaderwhite' style='text-align:center'>Alex Prusky
+                                </h3>
+                                <p class='officerdescription'>Alex Presky is the historian for our Chapter. He
+                                    assures
+                                    that our chapter is up to date with TSA policy and keeps records of all our
+                                    major
+                                    events and meetings for our chapter. </p>
+                            </div>
+                            <div class='carousel-item'>
+                                <h3 class='section-heading subheaderwhite' style='text-align:center'>Secretary</h3>
+                                <img src="../Images/Officers/andrew.PNG" class="rounded mx-auto d-block" alt="..."
+                                    height='300px'>
+                                <h3 class='section-heading subheaderwhite' style='text-align:center'>Andrew Beer
+                                </h3>
+                                <p class='officerdescription'>Andrew Beer is the Secretary for our chapter. Andrew
+                                    makes
+                                    sure our offical communications with the State Officer are professional. He
+                                    always
+                                    keeps an accurate record record of each topic discussed during the meetings.</p>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class='scrollerspacer extrab' id='section3'></div>
+    </section>
+    <section class='section whitesection'>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-xl-10 col-lg-12 mx-auto middle-brace'>
+
+                    <h3 class='section-heading subheaderwhite' style='text-align:center'>Our Technology Teachers
+                    </h3>
+                    <div id="techeduscroller" class="carousel slide" data-ride="carousel" data-interval="false">
+                        <div class="carousel-inner">
+                            <div class='carousel-item active'>
+                                <h3 class='section-heading subheaderwhite' style='text-align:center'>Mickey Engel
+                                </h3>
+                                <img src="../Images/Teachers/engel2.jpg" class="rounded mx-auto d-block" alt="..."
+                                    height='300px'>
+                                <p class='officerdescription ofdesc-sep'>Mr. Engel teaches all of the computer
+                                    science
+                                    courses at Plymouth Whitemarsh High School. Mr. Engel is very well liked
+                                    throughout
+                                    the school and directs the school play yearly. </p>
+                            </div>
+                            <div class="carousel-item">
+                                <h3 class='section-heading subheaderwhite' style='text-align:center'>Chris Brunner
+                                </h3>
+                                <img src="../Images/Teachers/brunner.jpg" class="rounded mx-auto d-block" alt="..."
+                                    height='300px'>
+                                <p class='officerdescription ofdesc-sep'>Mr. Brunner teaches both Robotics 1 and
+                                    Honors
+                                    Robotics 2. Mr. Brunner also sponsors the robotics club at PWHS, taking the
+                                    robotics
+                                    team to several competitions during the school year. </p>
+                            </div>
+                            <div class="carousel-item">
+                                <h3 class='section-heading subheaderwhite' style='text-align:center'>Jim Muscarella
+                                </h3>
+                                <img src="../Images/Teachers/musc.jpg" class="rounded mx-auto d-block" alt="..."
+                                    height='300px'>
+                                <p class='officerdescription ofdesc-sep'>Mr. Muscarella mainly teaches Engineering
+                                    1, 2,
+                                    and Ap Engineering, but this year he decided to teach Electronics 1 as well. Mr.
+                                    Musc used to be a physics teacher before the engineering program started. Mr.
+                                    Musc
+                                    also helps out at the Newpaper Club.</p>
+                            </div>
+                            <div class="carousel-item">
+                                <h3 class='section-heading subheaderwhite' style='text-align:center'>Rich Evan</h3>
+                                <img src="../Images/Teachers/evan.jpg" class="rounded mx-auto d-block" alt="..."
+                                    height='300px'>
+                                <p class='officerdescription ofdesc-sep'>Mr. Evan teaches Manufacturing and the Cadd
+                                    1
+                                    and 2 courses at PWHS. Mr. Evan is the advisor for the Plymouth Whitemarsh High
+                                    School TSA chapter. He makes sure that all chapter members get their work done
+                                    and
+                                    properly support the chapter.</p>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#techeduscroller" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#techeduscroller" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class='darksection section'>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-xl-10 col-lg-12 mx-auto middle-brace'>
+                    <h3 class='section-heading subheaderblue' style='text-align:center'>Our Stem Classes</h3>
+
+                    <ul class="nav nav-tabs nav-justified" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#Programming">Programming</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#Engineering">Engineering</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#Gamemaking">Gamemaking</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#Robotics">Robotics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#Manufacturing">Manufacturing</a>
+                        </li>
+                    </ul>
+                    <div class='tab-content'>
+                        <div class='tab-pane fade show active' id='Programming'>
+                            <div class='d-flex flex-column flex-lg-row'>
+                                <div>
+                                    <h2>Programming</h2>
+                                    <p>The programming languages are HTML, CSS, Javascript, and Java utilized.
+                                        Topics
+                                        studied include program design and definition, input/output, data types,
+                                        algorithm development, modularization, methods, arrays, sorting and
+                                        searching. A
+                                        main focus of the curriculum is object oriented design and development</p>
+                                    </br>
+                                    <div class='coursebox'><span>Computer Science 1</span></div>
+                                    <span class='dwarrow'>&darr;</span>
+                                    <div class='coursebox'><span>Honors Computer Science 2</span></div>
+                                    <span class='dwarrow'>&darr;</span>
+                                    <div class='coursebox'><span>AP Computer Science - A</span></div>
+                                    <span class='dwarrow'>&darr;</span>
+                                    <div class='coursebox'><span>AP Computer Science Principals</span></div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class='tab-pane fade show' id='Engineering'>
+                            <div class='d-flex flex-column flex-lg-row'>
+                                <div>
+                                    <h2>Engineering</h2>
+                                    <p>Engineering is the creative application of mathematical and scientific
+                                        principles
+                                        to design or develop structures, machines, or manufacturing processes. This
+                                        course will introduce students to the engineering profession. Students will
+                                        learn to think like engineers as they take on various challenges through
+                                        project
+                                        based learning. Possible projects include balsa bridge or tower design,
+                                        mousetrap powered vehicles, and model rocketry. Throughout each project,
+                                        students will be introduced to engineering and experimental design
+                                        principles
+                                        while developing project management, technical writing/drawing and problem
+                                        solving skills</p>
+                                    </br>
+                                    <div class='coursebox'><span>Honors Engineering 1</span></div>
+                                    <span class='dwarrow'>&darr;</span>
+                                    <div class='coursebox'><span>Honors Engineering 2</span></div>
+                                    <span class='dwarrow'>&darr;</span>
+                                    <div class='coursebox'><span>AP Engineering (*Pilot)</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='tab-pane fade show' id='Gamemaking'>
+                            <div class='d-flex flex-column flex-lg-row'>
+                                <div>
+                                    <h2>Gamemaking</h2>
+                                    <p>These courses has students focusing on concepts taught in a college-level
+                                        "Programming 101" course, but all of the projects are games! Students will
+                                        receive an introduction to basic programming by building two dimensional
+                                        games.
+                                        Students will finish complete stand-alone executable games that can be
+                                        played
+                                        with friends and added to your digital portfolio.</p>
+                                    </br>
+                                    <div class='coursebox'><span>Game Design</span></div>
+                                    <div class='coursebox'><span>Evolution of Games</span></div>
+                                    <span class='dwarrow'>&darr;</span>
+                                    <div class='coursebox'><span>Gamemaker Programming</span></div>
+                                    <span class='dwarrow'>&darr;</span>
+                                    <div class='coursebox'><span>Honors Computational Math</span></div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class='tab-pane fade show' id='Robotics'>
+                            <div class='d-flex flex-column flex-lg-row'>
+                                <div>
+                                    <h2>Robotics</h2>
+                                    <p>Robotics Design, Build and Program is an introductory hands on course where
+                                        students gain real world experiences in the exciting field of robotics.
+                                        Utilizing VEX robots, students will work individually and collaboratively to
+                                        complete robotic challenges provided by the instructor. A variety of skills
+                                        and
+                                        techniques will be introduced and exercised in order to design, build and
+                                        program autonomous and remote controlled robots to complete various tasks.
+                                    </p>
+                                    </br>
+                                    <div class='coursebox'><span>Robotics 1</span></div>
+                                    <span class='dwarrow'>&darr;</span>
+                                    <div class='coursebox'><span>Honors Robotics 2</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='tab-pane fade show' id='Manufacturing'>
+                            <div class='d-flex flex-column flex-lg-row'>
+                                <div>
+                                    <h2>Manufacturing</h2>
+                                    <p>Manufacturing combines the fields of art, business, and engineering to design
+                                        the
+                                        products that people use every day. This course will provide an overview of
+                                        the
+                                        design and problem solving process through fun and innovative hands-on
+                                        activities. Students will gain experiences using all types of technology
+                                        throughout the semester including the use of our state-of-the-art
+                                        prototyping
+                                        facility. Student should get excited by the opportunities to create models
+                                        on
+                                        computers and then make them a reality through use of 3D printers, laser
+                                        cutter
+                                        and CNC rapid prototyping machinery. Traditional production tools are also
+                                        available to create and fabricate solutions to all types of design problems
+                                    </p>
+                                    </br>
+                                    <div class='coursebox'><span>Product Design 1</span></div>
+                                    <span class='dwarrow'>&darr;</span>
+                                    <div class='coursebox'><span>Honors Product Design 2</span></div>
+                                    <span class='dwarrow'>&darr;</span>
+                                    <div class='coursebox'><span>Honors Entrepreneurship</span></div>
+                                    <span class='dwarrow'>&darr;</span>
+                                    <div class='coursebox'><span>Honors Innovation/Design Studio</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <div class='section bluesection'>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-xl-10 col-lg-12 mx-auto middle-brace footerinfo'>
+                    <p style='padding-top:40px'>PWHS Webmaster Team</p>
+                    <p style='padding-bottom:30px'>COPYRIGHT © 2020. Plymouth Whitemarsh High School TSA</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

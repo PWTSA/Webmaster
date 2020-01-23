@@ -1,0 +1,211 @@
+    @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
+    @import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500');
+    #scrollspy{
+        background-color:white;
+        
+    }
+    .nav-item{
+        font-size:20px;
+        color:black;
+        padding-right:10px;
+        padding-left:10px;
+        font-family:Roboto;
+        font-weight:500;
+    }
+    body {
+        position:relative;
+        background: linear-gradient(to bottom, #3e6ea8dc, #3c69a0dc);
+        /* background: #007bff; */
+        /* background: linear-gradient(to right, #0062E6, #0099ff); */
+    }
+    .about{
+        background-color: rgba(0, 0, 0, 0.8);
+        width:80%;
+        margin-left:10%;
+        margin-top:50vh;
+        padding: 12px 15px 12px 20px;
+        opacity:.8;
+    }
+    .about h1{
+        line-height:62px;
+        font-size:3.2vw;
+        text-align:center;
+        letter-spacing:-1px;
+        word-spacing:10px;
+        color:white;
+        font-weight:400;
+    }
+    .navbar{
+         position: fixed;
+         top:0;
+         width:100%;
+         z-index:1000;
+    }
+    .introductory{
+        height:600px;
+    }
+    .darksection{
+        background-color:#17181c;
+        padding-bottom:75px;
+    }
+    .subheaderblue{
+        color:#b394d5;
+        font-size:33px;
+        line-height:40px;
+        font-weight:500;
+        padding-top:50px;
+        padding-bottom:1.5rem;
+        font-family:Rubik;
+    }
+    .middle-brace p{
+        color: #e8e7e3;
+        font-size:22px;
+        line-height:32px;
+        font-family:rubik;
+    }
+    .subheaderwhite{
+        color:white;
+        font-size:33px;
+        line-height:40px;
+        font-weight:500;
+        padding-top:50px;
+        padding-bottom:1.5rem;
+        font-family:Rubik;
+        
+    }
+    .d-flex div h2{
+        padding-top:25px;
+        color:white;
+        font-family:Rubik;
+        font-weight:500;
+        font-size:33px;
+        color:#b394d5;
+    }
+    .coursebox{
+        width:320px;
+        border:3px white solid;
+        margin:auto;
+        height:50px;
+        margin-top:5px;
+        border-radius:5px;
+        text-align:center;
+        font-family:roboto;
+        font-weight:500;
+        font-size:20px;
+    }
+    .coursebox span{
+        position:relative;
+        top:6px;
+        color:white;
+    }
+    .dwarrow{
+        font-size:35px;
+        color:white;
+        margin-left:49%;
+    }
+    .whitesection{
+        padding-bottom:50px;
+    }
+    .officerdescription{
+        text-align:center;
+        margin-top:10px;
+    }
+    .competition-dropdown-tag{
+        display:inline-block;
+        font-size:33px;
+        line-height:39.6px;
+        font-weight:500;
+        font-family:rubik;
+        color:#b394d5;
+    }
+    .comp-dropdown{
+        background: linear-gradient(to right,#212529, #212529);
+        margin-top:50px;
+    }
+    .btn{
+        background-color:black;
+    }
+    .footerinfo p{
+        font-family:Rubik;
+        font-size:17px;
+        line-height:25px;
+        text-align:center;
+    }
+    .scrollerspacer::before{
+            content:"";
+            display:block;
+            height:0px; /* fixed header height*/
+            margin:-0px 0 0; /* negative fixed header height */
+    }
+    .scrollerspacer_1{
+        content:"";
+            display:block;
+            height:80px; /* fixed header height*/
+            margin:-80px 0 0; /* negative fixed header height */
+    }
+    .ofdesc-sep{
+        padding-top:50px;
+        padding-bottom:50px;
+    }
+    table{
+        color:white;
+        font-size:20px;
+        font-family:Rubik;
+        margin:auto;
+    }
+    th{
+        width:85%;
+        font-size:26px;
+        padding-bottom:10px;
+    }
+    td{
+        padding-bottom:20px;
+    }
+    #logo{
+        height:60px;
+        width:220px;
+    }
+    
+    
+    
+    @media only screen and (max-width: 700px) {
+        .about{
+            padding:0px;
+        }
+        .about h1{
+            font-size:22px;
+        }
+        .nav-justified li{
+            width:100%;
+            display:block;
+        }
+        .dwarrow{
+            font-size:35px;
+            color:white;
+            margin-left:45%;
+        }
+        .competition-dropdown-tag{
+            width:65%;
+        }
+        #logo{
+            height:40px;
+            width:140px;
+        }
+        /* .scrollerspacer{
+            top:-50px;
+        } */
+        .scrollerspacer::before{
+            content:"";
+            display:block;
+            height:0px; /* fixed header height*/
+            margin:5px 0 0; /* negative fixed header height */
+    }
+        table{
+            font-size:18px;
+        }
+        
+        
+        
+    }
+    
+    
