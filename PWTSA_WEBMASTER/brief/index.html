@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Vroomi</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Bungee|IBM+Plex+Mono:400,400i|IBM+Plex+Sans+Condensed:400,400i|IBM+Plex+Sans:100,100i,400,400i,700,700i|IBM+Plex+Serif:400,400i&display=swap|');
+    </style>
+    <!-- <link rel="stylesheet" href="styles.css" type="text/css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            color: white;
+        }
+
+        /* section {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-align: center;
+        } */
+
+        section {
+            width: 100%;
+            display: flex;
+            align-items: center;
+
+        }
+
+        .section-center {
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        section img {
+            width: 50vw;
+        }
+
+        .inner {
+            position: relative;
+
+        }
+
+        .outer {
+            border-bottom: solid blanchedalmond 2px;
+            overflow: hidden;
+        }
+
+        section:nth-child(1) {
+            background-color: #677776;
+        }
+
+        section:nth-child(2) {
+            /* background-color: #8b6c4c; */
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.79), rgba(55, 46, 46, 0.10)), url("pictures/pic1.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: ghostwhite;
+        }
+
+        section:nth-child(3) {
+            background-color: darkolivegreen;
+        }
+
+        section:nth-child(4) {
+            /* background-color: darkslategrey; */
+            background-color: blanchedalmond;
+            color: black;
+        }
+
+        section:nth-child(5) {
+            background-color: darkkhaki;
+        }
+
+        section:nth-child(6) {
+            background-color: #b84b4b;
+        }
+
+        section:nth-child(7) {
+            background-color: blanchedalmond;
+            color: darkolivegreen;
+        }
+
+        section:nth-child(8) {
+            background-color: burlywood;
+            color: darkolivegreen;
+        }
+
+        section:nth-child(9) {
+            background-color: darkolivegreen;
+            color: white;
+        }
+
+
+        txt {
+            text-align: left;
+            margin-right: 30vw;
+        }
+
+        h1 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        $(document).ready(function () {
+            var ctrl = new ScrollMagic.Controller();
+
+            gsap.from("#owo", { duration: 1.5, opacity: 0, scale: 0.9, ease: "back" });
+
+
+
+            // $("section").each(function () {
+            //     var in =
+            // }
+
+            // Create scenes in jQuery each() loop
+            $("section").each(function () {
+                var inner = $(this).find(".inner");
+                var outer = $(this).find(".outer");
+                var slideInRight = $(this).find(".slideInRight");
+
+                var tl = new TimelineMax();
+
+                // tl.from(outer, 0.25, { scaleY: 0 });
+                // tl.from(inner, 0.65, { yPercent: 100, ease: Back.easeOut });
+
+                // tl.from(container, { duration: 1.5, opacity: 0, scale: 0.3, ease: "back" });
+                tl.from(slideInRight, { duration: 1, opacity: 0, scale: 1, ease: "power4.out", x: -100, stagger: 0.1 })
+
+                new ScrollMagic.Scene({
+                    triggerElement: this,
+                    triggerHook: 0.55
+                })
+                    .setTween(tl)
+                    .addTo(ctrl);
+
+            });
+
+        });
+
+    </script>
+    <section id="slide1" class="section-center" style='height:100vh;'>
+        <div>
+            <!-- <img id="owo" src="pictures/PWC_Logo.png" alt="" /> -->
+            <h1 style="font-family: 'Bungee', cursive;font-size: 10vh;">vroomi</h1>
+            <div class="inner">
+            </div>
+        </div>
+    </section>
+    <section id='uwu' class="section-center pt-5">
+        <div>
+            <div class="pb-5">
+
+                <h1>MADE FOR BIG ADVENTURES.</h1>
+            </div>
+        </div>
+        <div class='container'>
+            <div class='row'>
+                <div class="col-6 slideInRight">
+                    <img class='glyphs' src="Icons/distance.svg" alt="" style='width:100px;' />
+                    <div class='description_text'>Up to 400+ Miles
+                        </br>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="col-6 slideInRight">
+                    <img class='glyphs' src="Icons/carrr.svg" alt="" style='width:150px;' />
+                    <div class='description_text'>Wading Depth 3+ feet </div>
+                </div>
+            </div>
+            <div class='row'>
+                <div class="col-6 slideInRight">
+                    <img class='glyphs' src="Icons/clock.svg" alt="" />
+                    <div class='description_text'>0-60 in 3 seconds</div>
+                </div>
+                <div class="col-6 slideInRight">
+                    <img class='glyphs' src="Icons/motors.svg" alt="" style='width:130px;' />
+                    <div class='description_text'>Quad-Motor System</div>
+                </div>
+            </div>
+            <div class='row'>
+                <div class="col-6 slideInRight">
+                    <img class='glyphs' src="Icons/weight.svg" alt="" />
+                    <div class='description_text'>Max Towing 7,700 LB</div>
+                </div>
+                <div class="col-6 slideInRight">
+                    <img class='glyphs' src="Icons/speed.svg" alt="" />
+                    <div class='description_text'>Up to 50 HP</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class='pt-5'>
+        <div class="container seven">
+            <div class="row justify-content-start slideInRight">
+                <div class="col-8">
+                    <h1>A Little Bit About Us</h1>
+                </div>
+            </div>
+            <div class="row justify-content-center py-3">
+                <div class="col-11">
+                    <div class='slideInRight'>
+                      <h4>About Our Founder</h4>
+                      <p>As the Founder and CEO of Vroomi, Dr. Robert Mete is the leading force behind the ambitious drive of this company. Born in Wellington, New Zealand, nicknamed “Windy Wellington” due to strong winds from the Cook Strait, Robert took inspiration from his hometown to create the first commercial aero-electric car. As a child, Robert immigrated to America with his parents, with him came the hope of the American Dream. Starting at the bottom, Robert quickly excelled at engineering and became fascinated with cars. With a PhD in Electrical Science and Engineering, from MIT, and a BS in Environment and Sustainability from Perdue, Robert set to work at his passion, designing cars that benefit both the user and the Earth.</p>
+                    </div>
+                  </br>
+                    <div class='slideInRight'>
+                      <h4>About Our Company</h4>
+                      <p>For Vroomi, we make cars that are more efficient, more beautiful, more inspiring and more human than ever before. It means, simply, we make cars that change the world and the way we move through it. And this is just the beginning. We are building the most affordable car yet, and we continue to make products accessible and affordable to more and more people, ultimately accelerating the advent of clean transport and clean energy production. Electric cars, batteries, and renewable energy generation and storage already exist independently, but when combined, they become even more powerful – that’s the future we want.</p>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- <div class="row justify-content-end slideInRight">
+                <div class="col-4">
+                    TEST 5
+                </div>
+                <div class="col-4">
+                    TEST6
+                </div>
+            </div> -->
+            <!-- <h1 class="slideInRight">
+                TITLE OF SOMETHING
+            </h1>
+            <p class="slideInRight">This is some test text to see if this ort of
+                sklhdslkhjaflkjasdkl;fj;laksdjfk;lasjdfk;lsajd;lkfjsa;dklfjask;ldfj</p> -->
+        </div>
+    </section>
+</body>
+
+</html>
